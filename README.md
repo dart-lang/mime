@@ -57,3 +57,14 @@ request
     .map((part) => part.fold(0, (p, d) => p + d))
     .listen((length) => print('Part with length $length'));
 ```
+
+## Determining file extension by MIME type
+
+The top level function `extensionFromMime` can be used to determine the
+file extension of a given MIME type.
+
+```dart
+print(extensionFromMime('text/html'));  // Will print html
+print(extensionFromMime('image/jpeg'));  // Will print jpg
+print(extensionFromMime('application/pdf'));  // Will print pdf
+```
